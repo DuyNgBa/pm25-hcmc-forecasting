@@ -1,0 +1,95 @@
+# =====================================================================
+# Config tải khí tượng Open-Meteo (TV2 - Minh Trí, task G1-27 .. G1-35)
+# Nguồn: Open-Meteo Historical Weather API (tái phân tích ERA5 / ERA5-Land)
+#   https://open-meteo.com/en/docs/historical-weather-api
+# =====================================================================
+api_url: https://archive-api.open-meteo.com/v1/archive
+raw_dir: data/raw/openmeteo                       # khớp paths.raw_openmeteo trong configs/data.yaml
+out_hcm: data/interim/meteo_hcm.parquet           # khớp paths.meteo_hcm
+out_beijing: data/interim/meteo_beijing.parquet   # khớp paths.meteo_beijing
+healthyair_raw: data/raw/Air_Quality_HCMC.csv
+healthyair_clean: data/interim/healthyair_clean.parquet   # do TV1 xuất (src/data/clean_healthyair.py)
+merged_hcm: data/interim/hcm_merged.parquet               # HealthyAir sạch + khí tượng
+beijing_raw_dir: data/raw/beijing                         # 12 file PRSA của TV3 (để kiểm chứng G1-35)
+report_dir: reports/meteo
+
+hourly_vars:
+  - temperature_2m
+  - relative_humidity_2m
+  - dew_point_2m
+  - precipitation
+  - surface_pressure
+  - cloud_cover
+  - wind_speed_10m
+  - wind_direction_10m
+  - wind_gusts_10m
+
+# Tải dư vài ngày ở hai đầu để các đặc trưng tích luỹ (mưa 24h, số giờ kể từ trận mưa gần nhất)
+# đã có giá trị ngay từ giờ đầu tiên của dữ liệu ô nhiễm.
+# G1-28: đơn vị mong đợi, đối chiếu tài liệu Historical Weather API (gió đã đặt wind_speed_unit=ms).
+# fetch_openmeteo.py so khớp với "hourly_units" API trả về; lệch là báo lỗi.
+expected_units:
+  temperature_2m: "°C"
+  relative_humidity_2m: "%"
+  dew_point_2m: "°C"
+  precipitation: "mm"
+  surface_pressure: "hPa"
+  cloud_cover: "%"
+  wind_speed_10m: "m/s"
+  wind_direction_10m: "°"
+  wind_gusts_10m: "m/s"
+
+# G1-32: khoảng giá trị hợp lý về vật lý (bao cả TP.HCM và Bắc Kinh)
+valid_range:
+  temperature_2m: [-40, 50]
+  relative_humidity_2m: [0, 100]
+  dew_point_2m: [-60, 35]
+  precipitation: [0, 200]
+  surface_pressure: [900, 1100]
+  cloud_cover: [0, 100]
+  wind_speed_10m: [0, 60]
+  wind_direction_10m: [0, 360]
+  wind_gusts_10m: [0, 80]
+
+cities:
+  hcm:
+    timezone: Asia/Bangkok          # UTC+7, trùng giờ Việt Nam
+    start_date: "2021-02-20"
+    end_date: "2022-06-25"
+    # station_id theo quy ước của TV1 (healthyair_clean.parquet). configs/data.yaml của TV3 dùng S1..S6:
+    # code = S + số trạm. Toạ độ lấy từ Bảng 1 bài Data in Brief, đã đổi lại 2 cột bị ghi ngược.
+    stations:
+      hcm_01: {code: S1, lat: 10.86994333, lon: 106.7960143, area_type: urban_background}
+      hcm_02: {code: S2, lat: 10.74097081, lon: 106.6171323, area_type: traffic}
+      hcm_03: {code: S3, lat: 10.81621227, lon: 106.6204143, area_type: industrial}
+      hcm_04: {code: S4, lat: 10.81584553, lon: 106.7174282, area_type: residential}
+      hcm_05: {code: S5, lat: 10.77636612, lon: 106.6878094, area_type: traffic}
+      hcm_06: {code: S6, lat: 10.78047163, lon: 106.6594579, area_type: traffic_residential}
+  beijing:
+    timezone: Asia/Shanghai         # UTC+8, khớp giờ địa phương của bộ PRSA
+    start_date: "2013-02-26"
+    end_date: "2017-03-02"
+    # G1-27: toạ độ từ Bảng 1 của Wu, Xie & Kang (2022), npj Urban Sustainability 2:23,
+    # https://doi.org/10.1038/s42949-022-00070-0 (bộ UCI chỉ có tên trạm). Xuất ra data/stations/stations_beijing.csv.
+    stations:
+      Aotizhongxin:  {lat: 39.982, lon: 116.397}
+      Changping:     {lat: 40.217, lon: 116.230}
+      Dingling:      {lat: 40.292, lon: 116.220}
+      Dongsi:        {lat: 39.929, lon: 116.417}
+      Guanyuan:      {lat: 39.929, lon: 116.339}
+      Gucheng:       {lat: 39.914, lon: 116.184}
+      Huairou:       {lat: 40.328, lon: 116.628}
+      Nongzhanguan:  {lat: 39.937, lon: 116.461}
+      Shunyi:        {lat: 40.127, lon: 116.655}
+      Tiantan:       {lat: 39.886, lon: 116.407}
+      Wanliu:        {lat: 39.987, lon: 116.287}
+      Wanshouxigong: {lat: 39.878, lon: 116.352}
+
+features:
+  rain_threshold_mm: 0.1      # giờ có mưa nếu precipitation >= 0.1 mm (dùng cho hours_since_rain)
+  precip_windows: [6, 24]     # mưa tích luỹ 6h, 24h (gồm cả giờ hiện tại)
+  wind_mean_window: 6         # tốc độ gió trung bình 6 giờ qua
+  hours_since_rain_cap: 168   # chặn trên 7 ngày để giá trị không tăng vô hạn trong mùa khô
+
+timezone_check:
+  max_lag_hours: 8            # thử lệch từ -8 đến +8 giờ

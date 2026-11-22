@@ -1,0 +1,13 @@
+station_id,abbr,lat,lon,elevation_m,location,source
+Aotizhongxin,ATZX,39.982,116.397,42,Inside Olympic Center (Sports Center in urban),"Wu, Xie & Kang (2022), npj Urban Sustainability 2:23, Table 1, https://doi.org/10.1038/s42949-022-00070-0"
+Changping,CP,40.217,116.23,74,Urban Area of Changping (Block in town),"Wu, Xie & Kang (2022), npj Urban Sustainability 2:23, Table 1, https://doi.org/10.1038/s42949-022-00070-0"
+Dingling,DL,40.292,116.22,231,"Dingling, Changping (Park in suburban)","Wu, Xie & Kang (2022), npj Urban Sustainability 2:23, Table 1, https://doi.org/10.1038/s42949-022-00070-0"
+Dongsi,DS,39.929,116.417,31,Dongcheng District Environmental Protection Bureau (Block in urban),"Wu, Xie & Kang (2022), npj Urban Sustainability 2:23, Table 1, https://doi.org/10.1038/s42949-022-00070-0"
+Guanyuan,GY,39.929,116.339,47,Beijing Municipal Party School (School in urban),"Wu, Xie & Kang (2022), npj Urban Sustainability 2:23, Table 1, https://doi.org/10.1038/s42949-022-00070-0"
+Gucheng,GC,39.914,116.184,71,Shijingshan Environmental Protection Bureau (Institution in urban),"Wu, Xie & Kang (2022), npj Urban Sustainability 2:23, Table 1, https://doi.org/10.1038/s42949-022-00070-0"
+Huairou,HR,40.328,116.628,52,Urban Area of Huairou (Block in town),"Wu, Xie & Kang (2022), npj Urban Sustainability 2:23, Table 1, https://doi.org/10.1038/s42949-022-00070-0"
+Nongzhanguan,NZG,39.937,116.461,43,Residential Area of Agricultural Exhibition Hall (Residential zone in urban),"Wu, Xie & Kang (2022), npj Urban Sustainability 2:23, Table 1, https://doi.org/10.1038/s42949-022-00070-0"
+Shunyi,SY,40.127,116.655,15,Urban Area of Shunyi (Block in town),"Wu, Xie & Kang (2022), npj Urban Sustainability 2:23, Table 1, https://doi.org/10.1038/s42949-022-00070-0"
+Tiantan,TT,39.886,116.407,33,Inside Temple of Heaven Park (Park in urban),"Wu, Xie & Kang (2022), npj Urban Sustainability 2:23, Table 1, https://doi.org/10.1038/s42949-022-00070-0"
+Wanliu,WL,39.987,116.287,44,Inside Changchun Fitness Park (Park in urban),"Wu, Xie & Kang (2022), npj Urban Sustainability 2:23, Table 1, https://doi.org/10.1038/s42949-022-00070-0"
+Wanshouxigong,WSXG,39.878,116.352,51,Inside Wanshou Park (Park in urban),"Wu, Xie & Kang (2022), npj Urban Sustainability 2:23, Table 1, https://doi.org/10.1038/s42949-022-00070-0"
