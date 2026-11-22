@@ -1,0 +1,93 @@
+{
+  "source": "UCI Machine Learning Repository, dataset 501",
+  "doi": "10.24432/C5RK5G",
+  "license": "CC BY 4.0",
+  "url": "https://archive.ics.uci.edu/static/public/501/beijing+multi+site+air+quality+data.zip",
+  "checked_at": "2026-11-22T17:38:43",
+  "files": {
+    "Aotizhongxin": {
+      "rows": 35064,
+      "pm25_count": 34139,
+      "pm25_sum": 2825808.3,
+      "content_match": true,
+      "md5": "72a306d7a095e718c2b46ab482d5a1ac"
+    },
+    "Changping": {
+      "rows": 35064,
+      "pm25_count": 34290,
+      "pm25_sum": 2438010.2,
+      "content_match": true,
+      "md5": "1313dca76b70156c98c3bdab05c48f17"
+    },
+    "Dingling": {
+      "rows": 35064,
+      "pm25_count": 34285,
+      "pm25_sum": 2262449.9,
+      "content_match": true,
+      "md5": "ead8b0abf1be2c5fcbbd5c64c1dfedca"
+    },
+    "Dongsi": {
+      "rows": 35064,
+      "pm25_count": 34314,
+      "pm25_sum": 2957671.1,
+      "content_match": true,
+      "md5": "6b446b87b3ba1acc81d055308cb032bd"
+    },
+    "Guanyuan": {
+      "rows": 35064,
+      "pm25_count": 34448,
+      "pm25_sum": 2856888.8,
+      "content_match": true,
+      "md5": "fb84f1d3062e862c6aae63df3c5afd3b"
+    },
+    "Gucheng": {
+      "rows": 35064,
+      "pm25_count": 34418,
+      "pm25_sum": 2886021.2,
+      "content_match": true,
+      "md5": "2c9114e536c73ef5efa88a96963a4529"
+    },
+    "Huairou": {
+      "rows": 35064,
+      "pm25_count": 34111,
+      "pm25_sum": 2375025.0,
+      "content_match": true,
+      "md5": "8b560d1a51f94ede147bd66662fa591b"
+    },
+    "Nongzhanguan": {
+      "rows": 35064,
+      "pm25_count": 34436,
+      "pm25_sum": 2921498.0,
+      "content_match": true,
+      "md5": "43b53838cd8866ed975da0dff97c132a"
+    },
+    "Shunyi": {
+      "rows": 35064,
+      "pm25_count": 34151,
+      "pm25_sum": 2714717.7,
+      "content_match": true,
+      "md5": "9dcc6c5807b50735032c9ff41e09e69b"
+    },
+    "Tiantan": {
+      "rows": 35064,
+      "pm25_count": 34387,
+      "pm25_sum": 2825404.8,
+      "content_match": true,
+      "md5": "5efc8c33fe29306271025f9c6d96c400"
+    },
+    "Wanliu": {
+      "rows": 35064,
+      "pm25_count": 34682,
+      "pm25_sum": 2891601.9,
+      "content_match": true,
+      "md5": "68bb834e8f3a38d644631ed647266a36"
+    },
+    "Wanshouxigong": {
+      "rows": 35064,
+      "pm25_count": 34368,
+      "pm25_sum": 2922109.5,
+      "content_match": true,
+      "md5": "c95cc488ace63adf1723192da0330808"
+    }
+  }
+}
