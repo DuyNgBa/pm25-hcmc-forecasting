@@ -47,7 +47,19 @@ Ngày thường so với cuối tuần:
 - **Mọi trạm đều cao nhất vào buổi sáng (6–9h)**, đúng giờ đi làm. Buổi sáng lớp không khí sát mặt đất còn mỏng nên bụi bị giữ lại, cộng thêm lượng xe đông.
 - Phần lớn các trạm **thấp nhất vào đầu giờ chiều (13–16h)**, khi trời nắng làm không khí xáo trộn mạnh và bụi phát tán lên cao.
 - Trạm 5 và 6 (Q.3, Q.10, khu trung tâm) có đỉnh muộn hơn (9h) và thấp nhất lúc nửa đêm.
-- **Cuối tuần chỉ thấp hơn ngày thường một chút (1–8%)**, nên chu kỳ tuần không mạnh. Trạm 3 (khu công nghiệp) giảm nhiều nhất, có thể vì nhà máy làm việc ít hơn vào cuối tuần.
+- **Chủ nhật là ngày bụi ít nhất ở cả 6 trạm**, thấp hơn trung bình thứ 2–6 khoảng 7–17%. Thứ 7 thì vẫn cao gần như ngày thường. Vì vậy, nếu gộp thứ 7 với chủ nhật thành "cuối tuần" thì chỉ thấy giảm 1–8%, làm che mất hiệu ứng của chủ nhật.
+
+| Trạm | TB thứ 2–6 | Thứ 7 | Chủ nhật | Chủ nhật so với thứ 2–6 |
+|---|---:|---:|---:|---:|
+| hcm_01 | 20,9 | 21,9 | 19,3 | −7,5% |
+| hcm_02 | 19,5 | 19,6 | 17,0 | −12,9% |
+| hcm_03 | 24,1 | 24,2 | 20,0 | −17,0% |
+| hcm_04 | 26,9 | 26,6 | 23,9 | −11,1% |
+| hcm_05 | 15,8 | 15,6 | 13,6 | −14,1% |
+| hcm_06 | 20,3 | 21,0 | 18,0 | −11,5% |
+
+- Trạm 3 (khu công nghiệp) giảm nhiều nhất vào chủ nhật (−17%), phù hợp với việc nhiều nhà máy và người lao động vẫn làm việc thứ 7 nhưng nghỉ chủ nhật.
+  → Đặc trưng "thứ trong tuần" có ích cho mô hình, đặc biệt là để nhận biết chủ nhật.
 
 ## G1-22. Chu kỳ năm: theo tháng, mùa khô và mùa mưa
 PM2.5 trung bình theo tháng (gộp các năm):
@@ -79,7 +91,9 @@ Mùa khô (tháng 12–4) so với mùa mưa (tháng 5–11):
 Lưu ý: dữ liệu từ 02/2021 đến 06/2022, nên các tháng 3–6 có 2 năm, các tháng 7–11 chỉ có năm 2021 (trùng giai đoạn giãn cách).
 
 **Nhận xét G1-22** (hình: `figures/g1_22_annual.png`, `figures/g1_22_timeseries.png`)
-- **Mùa khô bụi nhiều hơn mùa mưa**, gấp khoảng 1,1–1,4 lần tuỳ trạm. Cao nhất vào **tháng 12 và tháng 1**.
+- **Mùa khô bụi nhiều hơn mùa mưa**, gấp khoảng 1,1–1,4 lần tuỳ trạm. Giai đoạn bụi cao là **từ tháng 10 đến tháng 1**, và **tháng 1 là tháng cao nhất ở 5/6 trạm**.
+- Ngoại lệ: trạm 5 cao nhất vào tháng 4 (18,8), nhỉnh hơn tháng 1 (18,6) không đáng kể. Trạm này thiếu toàn bộ dữ liệu tháng 8–9 và chỉ có ít dữ liệu tháng 10, nên đỉnh mùa khô không rõ.
+- **Tháng 2 giảm đột ngột** so với tháng 1 ở mọi trạm, dù vẫn đang mùa khô. Có thể do **Tết Nguyên đán** rơi vào tháng 2 ở cả hai năm (12/02/2021 và 01/02/2022): nhiều người về quê, xe cộ và công trình giảm. Đây là giả thuyết, cần kiểm tra thêm bằng cách so sánh tuần Tết với các tuần xung quanh.
 - Thấp nhất vào **tháng 7–9**. Tuy nhiên đây vừa là mùa mưa, vừa là giai đoạn giãn cách năm 2021, nên không tách được bao nhiêu phần là do mưa và bao nhiêu phần là do giãn cách.
 - Từ tháng 10, bụi tăng dần trở lại khi bước sang mùa khô.
 
@@ -173,7 +187,7 @@ Chu kỳ ngày (gộp các trạm): giãn cách so với các tháng mùa mưa k
 - Sau giãn cách (tháng 10), bụi tăng lên **cao hơn cả trước giãn cách**, vì xe cộ hoạt động trở lại và thời tiết bắt đầu chuyển sang mùa khô.
 
 ## Gợi ý cho bước xây dựng mô hình
-1. Thêm đặc trưng **giờ trong ngày** và **PM2.5 cùng giờ hôm trước** (lag 24 giờ).
+1. Thêm đặc trưng **giờ trong ngày**, **thứ trong tuần** (chủ nhật thấp hơn rõ rệt) và **PM2.5 cùng giờ hôm trước** (lag 24 giờ). Có thể thử thêm biến đánh dấu kỳ nghỉ Tết.
 2. Giữ biến **`is_lockdown`**, vì giai đoạn giãn cách có mức bụi và nhịp trong ngày khác hẳn bình thường.
 3. Thử dùng **PM2.5 của trạm lân cận**, nhất là các cặp 2–3 và 5–6.
 4. **Không nên để tập test rơi vào giai đoạn giãn cách**, vì dữ liệu lúc đó không giống thời gian bình thường.
