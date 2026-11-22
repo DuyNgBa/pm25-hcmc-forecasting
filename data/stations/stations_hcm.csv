@@ -1,7 +1,0 @@
-station_id,station_no,lat,lon,area_type,lat_proposal,lon_proposal,diff_m,source
-hcm_01,1,10.86994333,106.7960143,urban_background,10.8699,106.796,5.1,"Rakholia et al. (2023), Data in Brief 46, 108774, Table 1 (cột latitude/longitude bị ghi ngược tên trong bài gốc, đã đổi lại)"
-hcm_02,2,10.74097081,106.6171323,traffic,10.741,106.6171,4.8,"Rakholia et al. (2023), Data in Brief 46, 108774, Table 1 (cột latitude/longitude bị ghi ngược tên trong bài gốc, đã đổi lại)"
-hcm_03,3,10.81621227,106.6204143,industrial,10.8162,106.6204,2.1,"Rakholia et al. (2023), Data in Brief 46, 108774, Table 1 (cột latitude/longitude bị ghi ngược tên trong bài gốc, đã đổi lại)"
-hcm_04,4,10.81584553,106.7174282,residential,10.8158,106.7174,5.9,"Rakholia et al. (2023), Data in Brief 46, 108774, Table 1 (cột latitude/longitude bị ghi ngược tên trong bài gốc, đã đổi lại)"
-hcm_05,5,10.77636612,106.6878094,traffic,10.7764,106.6878,3.9,"Rakholia et al. (2023), Data in Brief 46, 108774, Table 1 (cột latitude/longitude bị ghi ngược tên trong bài gốc, đã đổi lại)"
-hcm_06,6,10.78047163,106.6594579,traffic_residential,10.7805,106.6595,5.6,"Rakholia et al. (2023), Data in Brief 46, 108774, Table 1 (cột latitude/longitude bị ghi ngược tên trong bài gốc, đã đổi lại)"
