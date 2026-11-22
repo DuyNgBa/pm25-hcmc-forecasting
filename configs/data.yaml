@@ -27,15 +27,15 @@ paths:
 # ---------------------------------------------------------------------
 stations:
   hcm:
-    # station_id = "S" + Station_No. area_type dùng cho phân tích theo loại khu vực.
+    # station_id = "hcm_" + Station_No 2 chữ số (quy ước của TV1 trong clean_healthyair.py). area_type dùng cho phân tích theo loại khu vực.
     # Toạ độ lấy từ Bảng 1 bài Data in Brief [1]. LƯU Ý: bảng gốc ghi nhầm
     # tiêu đề cột (cột "longitude" thực ra là vĩ độ ~10.8, "latitude" là kinh độ ~106.7).
-    S1: {area_type: urban_background, lat: 10.86994333, lon: 106.7960143}
-    S2: {area_type: traffic,          lat: 10.74097081, lon: 106.6171323}
-    S3: {area_type: industrial,       lat: 10.81621227, lon: 106.6204143}
-    S4: {area_type: residential,      lat: 10.81584553, lon: 106.7174282}
-    S5: {area_type: traffic,          lat: 10.77636612, lon: 106.6878094}
-    S6: {area_type: traffic_residential, lat: 10.78047163, lon: 106.6594579}
+    hcm_01: {area_type: urban_background, lat: 10.86994333, lon: 106.7960143}
+    hcm_02: {area_type: traffic,          lat: 10.74097081, lon: 106.6171323}
+    hcm_03: {area_type: industrial,       lat: 10.81621227, lon: 106.6204143}
+    hcm_04: {area_type: residential,      lat: 10.81584553, lon: 106.7174282}
+    hcm_05: {area_type: traffic,          lat: 10.77636612, lon: 106.6878094}
+    hcm_06: {area_type: traffic_residential, lat: 10.78047163, lon: 106.6594579}
   beijing:
     # Toạ độ do TV2 bổ sung (G1-27). area_type chỉ để tham khảo.
     ids: [Aotizhongxin, Changping, Dingling, Dongsi, Guanyuan, Gucheng,
@@ -79,7 +79,7 @@ rolling_origin:
 # ---------------------------------------------------------------------
 cleaning:
   max_interp_gap_hours: 3     # nội suy tuyến tính khoảng trống <= 3 giờ, trong từng trạm
-  outlier_quantile: 0.999     # cắt trên ở phân vị 99,9 (ngưỡng tính CHỈ trên train)
+  outlier_quantile: 0.999     # PM2.5 KHÔNG cắt (giống TV1); chỉ ghi ngưỡng q99,9 train để tham khảo
 
 # ---------------------------------------------------------------------
 # G1-51, G1-53: Chuẩn hoá

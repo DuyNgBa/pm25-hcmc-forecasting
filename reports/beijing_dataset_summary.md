@@ -67,7 +67,7 @@ Các trạm ngoại thành có PM2.5 thấp hơn rõ rệt so với nội thành
 | Vấn đề | Chi tiết | Cách xử lý (giống hệt HealthyAir) |
 |---|---|---|
 | Thiếu giá trị | PM2.5 thiếu 1,1–2,7% mỗi trạm; khí tượng thiếu < 0,5% | Nội suy tuyến tính khoảng trống **≤ 3 giờ**, đánh dấu `is_imputed = 1`. Khoảng trống dài hơn giữ nguyên NaN. Sau bước này PM2.5 còn thiếu 0,5–1,9% |
-| Giá trị trần 999 | PM2.5 và PM10 có giá trị 999, nhiều khả năng là giới hạn của thiết bị | Cắt trên ở phân vị 99,9 tính trên tập train (564 µg/m³), ảnh hưởng 411 giờ |
+| Giá trị rất cao | PM2.5 lên tới 999 µg/m³ (các đợt ô nhiễm nặng mùa đông) | **Giữ nguyên**, không cắt, giống cách nhóm xử lý PM2.5 TP.HCM: đây là biến cần dự báo, giá trị cao là sự kiện thật. Khi chuẩn hoá, PM2.5 được lấy log nên các giá trị lớn được nén lại |
 | Số nguyên | PM2.5 được ghi dạng số nguyên (4, 8, 55…) | Không cần xử lý |
 | Không có độ ẩm | Bộ này không có độ ẩm tương đối | Dùng độ ẩm của Open-Meteo |
 | Hướng gió dạng chữ | `wd` là chữ, không dùng trực tiếp được | Đổi chữ sang độ, rồi tách thành 2 thành phần gió `wind_u`, `wind_v` |

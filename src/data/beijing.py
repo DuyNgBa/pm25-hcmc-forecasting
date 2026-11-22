@@ -47,7 +47,8 @@ def clean(df_raw: pd.DataFrame, cfg: dict) -> tuple[pd.DataFrame, dict]:
 
     1) lưới giờ đầy đủ (Bắc Kinh vốn đã đủ, bước này chỉ để đảm bảo);
     2) PM2.5 <= 0 -> NaN (cùng quy tắc #6a của HealthyAir; Bắc Kinh thực tế không có);
-    3) cắt trên PM2.5 ở phân vị 99,9 — ngưỡng tính CHỈ trên tập train Bắc Kinh;
+    3) KHÔNG cắt outlier PM2.5 (giống TV1: PM2.5 là biến mục tiêu, giá trị cao là sự kiện thật cần dự báo;
+       log1p khi chuẩn hoá đã nén đuôi). Chỉ GHI LẠI ngưỡng phân vị 99,9 trên train để tham khảo;
     4) nội suy tuyến tính khoảng trống <= max_interp_gap_hours, trong từng trạm; cờ is_imputed.
     Khí tượng gốc (temp_native...) được nội suy cùng quy tắc nhưng KHÔNG dùng trong lược đồ chung
     khi đã có Open-Meteo (xem schema.py).
@@ -65,9 +66,8 @@ def clean(df_raw: pd.DataFrame, cfg: dict) -> tuple[pd.DataFrame, dict]:
 
     in_train = df["time"].between(tr_s, tr_e)
     thr = float(df.loc[in_train, "pm25"].quantile(q))
-    n_clip = int((df["pm25"] > thr).sum())
-    df["pm25"] = df["pm25"].clip(upper=thr)
-    log.update({"pm25_clip_threshold_train_q999": round(thr, 2), "pm25_clipped_rows": n_clip})
+    log.update({"pm25_train_q999_tham_khao": round(thr, 2), "pm25_gio_vuot_q999": int((df["pm25"] > thr).sum()),
+                "pm25_clipped": False})
 
     out = []
     for st, g in df.groupby("station_id", sort=True):
