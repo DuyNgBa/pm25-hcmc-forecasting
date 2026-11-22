@@ -1,4 +1,4 @@
-# Mẫu bảng kết quả (G0-04)
+# Mẫu bảng kết quả
 
 Mỗi phương pháp một file `results/<tên-phương-pháp>.csv`, copy từ `results_template.csv`, giữ đúng thứ tự cột.
 Mỗi dòng = 1 mô hình × 1 cấu hình × 1 tầm dự báo × 1 trạm (hoặc ALL) × 1 tập đánh giá × 1 seed.
@@ -24,3 +24,37 @@ Mỗi dòng = 1 mô hình × 1 cấu hình × 1 tầm dự báo × 1 trạm (ho�
 | run_id | chuỗi | Mã lần chạy, nối sang file dự đoán `results/preds/` |
 
 Không tự tính độ đo bằng tay: dùng hàm trong `src/evaluate.py`.
+
+---
+
+
+# Format file dự đoán
+
+Mỗi lần chạy mô hình, lưu dự đoán trên tập đánh giá vào:
+
+`results/preds/<run_id>__<eval_set>.parquet`   
+(ví dụ: `results/preds/patchtst_1a2b3c4d__test.parquet`)
+
+`run_id` trùng với cột `run_id` trong file kết quả, để nối được 2 file với nhau.
+
+| Cột | Kiểu | Ý nghĩa |
+|---|---|---|
+| city | chuỗi | `hcm` |
+| station_id | chuỗi | `S1` .. `S6` |
+| time_origin | thời gian | Thời điểm gốc t (giờ cuối cùng của input), giờ địa phương, không kèm múi giờ |
+| horizon | số nguyên | Tầm dự báo h ∈ {1, 6, 24}. Thời điểm được dự báo = `time_origin + h` giờ |
+| y_true | số thực | PM2.5 thật (µg/m³). **Để NaN** nếu giờ đó không phải giá trị đo thật (bị thiếu hoặc là giá trị nội suy) |
+| y_pred | số thực | PM2.5 dự đoán (µg/m³, đã đổi ngược về đơn vị gốc) |
+| model | chuỗi | Tên mô hình, giống cột `model` trong file kết quả |
+| config | chuỗi | Bằng `run_id` |
+
+Quy tắc:
+- Dạng **dài**: mỗi dòng = 1 trạm × 1 thời điểm gốc × 1 tầm. Mỗi lần chạy có đủ 3 tầm 1, 6, 24.
+- Mọi mô hình dùng **cùng tập (station_id, time_origin)** trên test, để so sánh được từng giờ một.
+- Lưu bằng **parquet**: nhẹ hơn CSV nhiều lần và giữ đúng kiểu thời gian.
+
+Ví dụ lưu bằng pandas:
+
+```python
+preds.to_parquet(f"results/preds/{run_id}__test.parquet", index=False)   # cần cài pyarrow
+```
