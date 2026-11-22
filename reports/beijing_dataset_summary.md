@@ -83,7 +83,7 @@ Nhìn chung bộ Bắc Kinh **sạch hơn HealthyAir rất nhiều**: thiếu ~2
 | % giờ > 35,4 µg/m³ (mức cần cảnh báo) | 62,7% | 11,3% |
 | Giờ ô nhiễm nhất trong ngày | khoảng 22h (ban đêm) | khoảng 7h (giờ đi làm buổi sáng) |
 | Mùa ô nhiễm | mùa đông (tháng 12, do sưởi ấm) | mùa khô (tháng 1) |
-| Các trạm có lên xuống cùng nhau không | rất giống nhau (tương quan 0,89) | ít giống hơn (0,60), do nguồn ô nhiễm tại chỗ |
+| Các trạm có lên xuống cùng nhau không | rất giống nhau (tương quan 0,89) | ít giống hơn (0,59), do nguồn ô nhiễm tại chỗ |
 
 Vì hai thành phố chênh nhau khoảng 4 lần về mức nồng độ, PM2.5 được **lấy log rồi chuẩn hoá riêng theo từng trạm** trước khi đưa vào mô hình. Nhờ đó mô hình học **hình dạng lên xuống** của chuỗi chứ không học mức tuyệt đối.
 
