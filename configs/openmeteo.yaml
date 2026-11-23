@@ -4,6 +4,9 @@
 #   https://open-meteo.com/en/docs/historical-weather-api
 # =====================================================================
 api_url: https://archive-api.open-meteo.com/v1/archive
+# Cố định mô hình nguồn (recheck 22/11/2026): ERA5-Land 0,1° ghép ERA5 0,25°, cùng nguồn cho cả 2 thành phố.
+# Không ghi thì API dùng best_match, có thể trộn mô hình khác và đổi theo thời gian.
+model: era5_seamless
 raw_dir: data/raw/openmeteo                       # khớp paths.raw_openmeteo trong configs/data.yaml
 out_hcm: data/interim/meteo_hcm.parquet           # khớp paths.meteo_hcm
 out_beijing: data/interim/meteo_beijing.parquet   # khớp paths.meteo_beijing

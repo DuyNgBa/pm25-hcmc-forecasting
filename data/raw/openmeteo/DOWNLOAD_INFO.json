@@ -1,6 +1,6 @@
 {
   "hcm/hcm_01": {
-    "downloaded_at": "2026-11-22T19:04:19",
+    "downloaded_at": "2026-11-23T14:26:06",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 10.86994333,
@@ -9,18 +9,19 @@
       "end_date": "2022-06-25",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Bangkok",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 10.86116,
-    "grid_lon": 106.80531,
+    "grid_lat": 10.900002,
+    "grid_lon": 106.80002,
     "elevation": 33.0,
     "timezone": "Asia/Bangkok",
     "utc_offset_seconds": 25200,
     "rows": 11784,
-    "content_md5": "cffe22f7e66b47044a239c8b27f2aac0"
+    "content_md5": "099d4bdd36f1eecd7f92ee4d211b8b7b"
   },
   "hcm/hcm_02": {
-    "downloaded_at": "2026-11-22T19:04:22",
+    "downloaded_at": "2026-11-23T14:26:08",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 10.74097081,
@@ -29,18 +30,19 @@
       "end_date": "2022-06-25",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Bangkok",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 10.720562,
-    "grid_lon": 106.61661,
+    "grid_lat": 10.700005,
+    "grid_lon": 106.600006,
     "elevation": 8.0,
     "timezone": "Asia/Bangkok",
     "utc_offset_seconds": 25200,
     "rows": 11784,
-    "content_md5": "8172a9468f480e4e922fa9fd2dd07ac0"
+    "content_md5": "cc7b0b0bbbf9a0b018e944cfe854d2c4"
   },
   "hcm/hcm_03": {
-    "downloaded_at": "2026-11-22T19:04:24",
+    "downloaded_at": "2026-11-23T14:26:11",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 10.81621227,
@@ -49,18 +51,19 @@
       "end_date": "2022-06-25",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Bangkok",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 10.790861,
-    "grid_lon": 106.6313,
+    "grid_lat": 10.800003,
+    "grid_lon": 106.600006,
     "elevation": 6.0,
     "timezone": "Asia/Bangkok",
     "utc_offset_seconds": 25200,
     "rows": 11784,
-    "content_md5": "8f0478b1528fae8acedc41b02f9250d1"
+    "content_md5": "107a9a322e46b96d4d96d1b933b2aee9"
   },
   "hcm/hcm_04": {
-    "downloaded_at": "2026-11-22T19:04:27",
+    "downloaded_at": "2026-11-23T14:26:13",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 10.81584553,
@@ -69,18 +72,19 @@
       "end_date": "2022-06-25",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Bangkok",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 10.790861,
-    "grid_lon": 106.71088,
+    "grid_lat": 10.800003,
+    "grid_lon": 106.70001,
     "elevation": 9.0,
     "timezone": "Asia/Bangkok",
     "utc_offset_seconds": 25200,
     "rows": 11784,
-    "content_md5": "6de958e8aee4ffed2a747b281361b8be"
+    "content_md5": "5d29ccef66ba383d0cc1d61520706711"
   },
   "hcm/hcm_05": {
-    "downloaded_at": "2026-11-22T19:04:29",
+    "downloaded_at": "2026-11-23T14:26:16",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 10.77636612,
@@ -89,18 +93,19 @@
       "end_date": "2022-06-25",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Bangkok",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 10.790861,
-    "grid_lon": 106.71088,
+    "grid_lat": 10.800003,
+    "grid_lon": 106.70001,
     "elevation": 12.0,
     "timezone": "Asia/Bangkok",
     "utc_offset_seconds": 25200,
     "rows": 11784,
-    "content_md5": "d1b0a82088401f19526b7232156d7e06"
+    "content_md5": "94577ef26217f26affe653ebebc46dce"
   },
   "hcm/hcm_06": {
-    "downloaded_at": "2026-11-22T19:04:31",
+    "downloaded_at": "2026-11-23T14:26:18",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 10.78047163,
@@ -109,18 +114,19 @@
       "end_date": "2022-06-25",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Bangkok",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 10.790861,
-    "grid_lon": 106.6313,
+    "grid_lat": 10.800003,
+    "grid_lon": 106.70001,
     "elevation": 7.0,
     "timezone": "Asia/Bangkok",
     "utc_offset_seconds": 25200,
     "rows": 11784,
-    "content_md5": "255380d8514406ef97f5c4d2504593e9"
+    "content_md5": "f5f29323cd65b4e2cfd77fa5bc3d2590"
   },
   "beijing/Aotizhongxin": {
-    "downloaded_at": "2026-11-22T19:04:35",
+    "downloaded_at": "2026-11-23T14:22:04",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 39.982,
@@ -129,18 +135,19 @@
       "end_date": "2017-03-02",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Shanghai",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 39.964848,
-    "grid_lon": 116.39665,
+    "grid_lat": 40.0,
+    "grid_lon": 116.399994,
     "elevation": 46.0,
     "timezone": "Asia/Shanghai",
     "utc_offset_seconds": 28800,
     "rows": 35184,
-    "content_md5": "50178f8447e284d8bc31a2fd0de6b5fc"
+    "content_md5": "2ed03075f043c51f9e22822a5e25abf3"
   },
   "beijing/Changping": {
-    "downloaded_at": "2026-11-22T19:04:38",
+    "downloaded_at": "2026-11-23T14:22:07",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 40.217,
@@ -149,18 +156,19 @@
       "end_date": "2017-03-02",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Shanghai",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 40.175747,
-    "grid_lon": 116.255264,
+    "grid_lat": 40.199997,
+    "grid_lon": 116.20001,
     "elevation": 71.0,
     "timezone": "Asia/Shanghai",
     "utc_offset_seconds": 28800,
     "rows": 35184,
-    "content_md5": "59ecff6ca7ae8ebdd1cbe8aa5c0b6a11"
+    "content_md5": "90a3ce4f5e3697c1d273f2be79ad6d3d"
   },
   "beijing/Dingling": {
-    "downloaded_at": "2026-11-22T19:04:41",
+    "downloaded_at": "2026-11-23T14:22:10",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 40.292,
@@ -169,18 +177,19 @@
       "end_date": "2017-03-02",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Shanghai",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 40.246044,
-    "grid_lon": 116.29214,
+    "grid_lat": 40.300003,
+    "grid_lon": 116.20001,
     "elevation": 126.0,
     "timezone": "Asia/Shanghai",
     "utc_offset_seconds": 28800,
     "rows": 35184,
-    "content_md5": "50c265408f0bfe6f6a11828f9f2a4513"
+    "content_md5": "641b3c50e2bab2ddd2210cab7ea92ae1"
   },
   "beijing/Dongsi": {
-    "downloaded_at": "2026-11-22T19:04:45",
+    "downloaded_at": "2026-11-23T14:22:13",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 39.929,
@@ -189,18 +198,19 @@
       "end_date": "2017-03-02",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Shanghai",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 39.964848,
-    "grid_lon": 116.39665,
+    "grid_lat": 39.90001,
+    "grid_lon": 116.399994,
     "elevation": 48.0,
     "timezone": "Asia/Shanghai",
     "utc_offset_seconds": 28800,
     "rows": 35184,
-    "content_md5": "4bc21f0fdcfbd1e0b3624b8e8cdf311b"
+    "content_md5": "a51551f253811fbd68bde823cc239847"
   },
   "beijing/Guanyuan": {
-    "downloaded_at": "2026-11-22T19:04:48",
+    "downloaded_at": "2026-11-23T14:22:17",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 39.929,
@@ -209,18 +219,19 @@
       "end_date": "2017-03-02",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Shanghai",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 39.89455,
-    "grid_lon": 116.35983,
+    "grid_lat": 39.90001,
+    "grid_lon": 116.30002,
     "elevation": 54.0,
     "timezone": "Asia/Shanghai",
     "utc_offset_seconds": 28800,
     "rows": 35184,
-    "content_md5": "b6ae157e7d0a60b65e0c54015fdb0dd8"
+    "content_md5": "74c754faa25215c0d3fbfff2a39fb6fd"
   },
   "beijing/Gucheng": {
-    "downloaded_at": "2026-11-22T19:05:57",
+    "downloaded_at": "2026-11-23T14:22:20",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 39.914,
@@ -229,18 +240,19 @@
       "end_date": "2017-03-02",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Shanghai",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 39.89455,
-    "grid_lon": 116.234314,
+    "grid_lat": 39.90001,
+    "grid_lon": 116.20001,
     "elevation": 78.0,
     "timezone": "Asia/Shanghai",
     "utc_offset_seconds": 28800,
     "rows": 35184,
-    "content_md5": "240d4df9a5470012ea6f30464b678dfc"
+    "content_md5": "a4c530a3dc2b1788f62155f490350b61"
   },
   "beijing/Huairou": {
-    "downloaded_at": "2026-11-22T19:06:01",
+    "downloaded_at": "2026-11-23T14:22:23",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 40.328,
@@ -249,18 +261,19 @@
       "end_date": "2017-03-02",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Shanghai",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 40.31634,
-    "grid_lon": 116.58228,
+    "grid_lat": 40.300003,
+    "grid_lon": 116.600006,
     "elevation": 60.0,
     "timezone": "Asia/Shanghai",
     "utc_offset_seconds": 28800,
     "rows": 35184,
-    "content_md5": "5ad29aa9c9b5c705cb1bd992da0eae15"
+    "content_md5": "1d3c09a40a80d69bd653f4300f373c93"
   },
   "beijing/Nongzhanguan": {
-    "downloaded_at": "2026-11-22T19:06:05",
+    "downloaded_at": "2026-11-23T14:22:26",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 39.937,
@@ -269,18 +282,19 @@
       "end_date": "2017-03-02",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Shanghai",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 39.89455,
-    "grid_lon": 116.48536,
+    "grid_lat": 39.90001,
+    "grid_lon": 116.5,
     "elevation": 45.0,
     "timezone": "Asia/Shanghai",
     "utc_offset_seconds": 28800,
     "rows": 35184,
-    "content_md5": "a52dd1297ed5d50925b758da3d750716"
+    "content_md5": "86c8af8ebbcbe97dbf42a49981a9079e"
   },
   "beijing/Shunyi": {
-    "downloaded_at": "2026-11-22T19:06:08",
+    "downloaded_at": "2026-11-23T14:22:30",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 40.127,
@@ -289,18 +303,19 @@
       "end_date": "2017-03-02",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Shanghai",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 40.175747,
-    "grid_lon": 116.63395,
+    "grid_lat": 40.100006,
+    "grid_lon": 116.70001,
     "elevation": 40.0,
     "timezone": "Asia/Shanghai",
     "utc_offset_seconds": 28800,
     "rows": 35184,
-    "content_md5": "17dc3d24263ef201bfe87b3c05376635"
+    "content_md5": "281b342d8698b27fe46246e5833b4329"
   },
   "beijing/Tiantan": {
-    "downloaded_at": "2026-11-22T19:06:12",
+    "downloaded_at": "2026-11-23T14:22:33",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 39.886,
@@ -309,18 +324,19 @@
       "end_date": "2017-03-02",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Shanghai",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 39.89455,
-    "grid_lon": 116.35983,
+    "grid_lat": 39.90001,
+    "grid_lon": 116.399994,
     "elevation": 43.0,
     "timezone": "Asia/Shanghai",
     "utc_offset_seconds": 28800,
     "rows": 35184,
-    "content_md5": "0f36cd89a0c86f6b7997566643c3b080"
+    "content_md5": "a65909cdd44aada51e25593e1f12bce7"
   },
   "beijing/Wanliu": {
-    "downloaded_at": "2026-11-22T19:06:15",
+    "downloaded_at": "2026-11-23T14:23:42",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 39.987,
@@ -329,18 +345,19 @@
       "end_date": "2017-03-02",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Shanghai",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 39.964848,
-    "grid_lon": 116.27095,
+    "grid_lat": 40.0,
+    "grid_lon": 116.30002,
     "elevation": 48.0,
     "timezone": "Asia/Shanghai",
     "utc_offset_seconds": 28800,
     "rows": 35184,
-    "content_md5": "f923dcd47907e067253022cb71bfd1d5"
+    "content_md5": "c38e61d0f557622937579e3c089a7542"
   },
   "beijing/Wanshouxigong": {
-    "downloaded_at": "2026-11-22T19:06:18",
+    "downloaded_at": "2026-11-23T14:23:45",
     "request": {
       "url": "https://archive-api.open-meteo.com/v1/archive",
       "latitude": 39.878,
@@ -349,15 +366,16 @@
       "end_date": "2017-03-02",
       "hourly": "temperature_2m,relative_humidity_2m,dew_point_2m,precipitation,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
       "timezone": "Asia/Shanghai",
-      "wind_speed_unit": "ms"
+      "wind_speed_unit": "ms",
+      "models": "era5_seamless"
     },
-    "grid_lat": 39.89455,
-    "grid_lon": 116.35983,
+    "grid_lat": 39.90001,
+    "grid_lon": 116.399994,
     "elevation": 49.0,
     "timezone": "Asia/Shanghai",
     "utc_offset_seconds": 28800,
     "rows": 35184,
-    "content_md5": "69bf348b93cfea7c4afa8193210074cc"
+    "content_md5": "451e6bd65653880e62bf2a10981c57b7"
   },
   "_source": {
     "api": "https://archive-api.open-meteo.com/v1/archive",

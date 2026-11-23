@@ -1,6 +1,6 @@
 # G1-32. Log kiểm tra dữ liệu Open-Meteo tải về
 
-Sinh tự động bởi `python -m src.data.fetch_openmeteo --verify` lúc 2026-11-22 19:06.
+Sinh tự động bởi `python -m src.data.fetch_openmeteo --verify` lúc 2026-11-23 14:26.
 
 ## Tiêu chí
 
@@ -39,24 +39,24 @@ Sinh tự động bởi `python -m src.data.fetch_openmeteo --verify` lúc 2026-
 
 | city    | station_id    |   rows |   rows_expected | start_ok   | end_ok   | hourly_step_ok   |   n_duplicated |   n_missing_total | units_ok   |   n_out_of_range | tz_ok   |   grid_lat |   grid_lon | ok   |
 |:--------|:--------------|-------:|----------------:|:-----------|:---------|:-----------------|---------------:|------------------:|:-----------|-----------------:|:--------|-----------:|-----------:|:-----|
-| hcm     | hcm_01        |  11784 |           11784 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    10.8612 |    106.805 | True |
-| hcm     | hcm_02        |  11784 |           11784 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    10.7206 |    106.617 | True |
-| hcm     | hcm_03        |  11784 |           11784 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    10.7909 |    106.631 | True |
-| hcm     | hcm_04        |  11784 |           11784 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    10.7909 |    106.711 | True |
-| hcm     | hcm_05        |  11784 |           11784 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    10.7909 |    106.711 | True |
-| hcm     | hcm_06        |  11784 |           11784 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    10.7909 |    106.631 | True |
-| beijing | Aotizhongxin  |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    39.9648 |    116.397 | True |
-| beijing | Changping     |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    40.1757 |    116.255 | True |
-| beijing | Dingling      |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    40.246  |    116.292 | True |
-| beijing | Dongsi        |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    39.9648 |    116.397 | True |
-| beijing | Guanyuan      |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    39.8946 |    116.36  | True |
-| beijing | Gucheng       |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    39.8946 |    116.234 | True |
-| beijing | Huairou       |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    40.3163 |    116.582 | True |
-| beijing | Nongzhanguan  |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    39.8946 |    116.485 | True |
-| beijing | Shunyi        |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    40.1757 |    116.634 | True |
-| beijing | Tiantan       |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    39.8946 |    116.36  | True |
-| beijing | Wanliu        |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    39.9648 |    116.271 | True |
-| beijing | Wanshouxigong |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |    39.8946 |    116.36  | True |
+| hcm     | hcm_01        |  11784 |           11784 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       10.9 |      106.8 | True |
+| hcm     | hcm_02        |  11784 |           11784 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       10.7 |      106.6 | True |
+| hcm     | hcm_03        |  11784 |           11784 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       10.8 |      106.6 | True |
+| hcm     | hcm_04        |  11784 |           11784 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       10.8 |      106.7 | True |
+| hcm     | hcm_05        |  11784 |           11784 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       10.8 |      106.7 | True |
+| hcm     | hcm_06        |  11784 |           11784 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       10.8 |      106.7 | True |
+| beijing | Aotizhongxin  |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       40   |      116.4 | True |
+| beijing | Changping     |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       40.2 |      116.2 | True |
+| beijing | Dingling      |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       40.3 |      116.2 | True |
+| beijing | Dongsi        |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       39.9 |      116.4 | True |
+| beijing | Guanyuan      |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       39.9 |      116.3 | True |
+| beijing | Gucheng       |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       39.9 |      116.2 | True |
+| beijing | Huairou       |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       40.3 |      116.6 | True |
+| beijing | Nongzhanguan  |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       39.9 |      116.5 | True |
+| beijing | Shunyi        |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       40.1 |      116.7 | True |
+| beijing | Tiantan       |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       39.9 |      116.4 | True |
+| beijing | Wanliu        |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       40   |      116.3 | True |
+| beijing | Wanshouxigong |  35184 |           35184 | True       | True     | True             |              0 |                 0 | True       |                0 | True    |       39.9 |      116.4 | True |
 
 **Tổng kết: 18/18 trạm đạt mọi tiêu chí.**
 
@@ -64,18 +64,19 @@ Sinh tự động bởi `python -m src.data.fetch_openmeteo --verify` lúc 2026-
 
 Nhiều trạm gần nhau rơi vào cùng một ô lưới nên có khí tượng giống hệt nhau:
 
-| city    |   grid_lat |   grid_lon | station_id                       |
-|:--------|-----------:|-----------:|:---------------------------------|
-| beijing |    39.8946 |    116.234 | Gucheng                          |
-| beijing |    39.8946 |    116.36  | Guanyuan, Tiantan, Wanshouxigong |
-| beijing |    39.8946 |    116.485 | Nongzhanguan                     |
-| beijing |    39.9648 |    116.271 | Wanliu                           |
-| beijing |    39.9648 |    116.397 | Aotizhongxin, Dongsi             |
-| beijing |    40.1757 |    116.255 | Changping                        |
-| beijing |    40.1757 |    116.634 | Shunyi                           |
-| beijing |    40.246  |    116.292 | Dingling                         |
-| beijing |    40.3163 |    116.582 | Huairou                          |
-| hcm     |    10.7206 |    106.617 | hcm_02                           |
-| hcm     |    10.7909 |    106.631 | hcm_03, hcm_06                   |
-| hcm     |    10.7909 |    106.711 | hcm_04, hcm_05                   |
-| hcm     |    10.8612 |    106.805 | hcm_01                           |
+| city    |   grid_lat |   grid_lon | station_id                     |
+|:--------|-----------:|-----------:|:-------------------------------|
+| beijing |       39.9 |      116.2 | Gucheng                        |
+| beijing |       39.9 |      116.3 | Guanyuan                       |
+| beijing |       39.9 |      116.4 | Dongsi, Tiantan, Wanshouxigong |
+| beijing |       39.9 |      116.5 | Nongzhanguan                   |
+| beijing |       40   |      116.3 | Wanliu                         |
+| beijing |       40   |      116.4 | Aotizhongxin                   |
+| beijing |       40.1 |      116.7 | Shunyi                         |
+| beijing |       40.2 |      116.2 | Changping                      |
+| beijing |       40.3 |      116.2 | Dingling                       |
+| beijing |       40.3 |      116.6 | Huairou                        |
+| hcm     |       10.7 |      106.6 | hcm_02                         |
+| hcm     |       10.8 |      106.6 | hcm_03                         |
+| hcm     |       10.8 |      106.7 | hcm_04, hcm_05, hcm_06         |
+| hcm     |       10.9 |      106.8 | hcm_01                         |

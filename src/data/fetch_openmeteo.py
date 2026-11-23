@@ -32,7 +32,8 @@ from src.data.openmeteo_common import ROOT, load_om_config, raw_json, rpath
 def build_params(cfg: dict, city: str, lat: float, lon: float) -> dict:
     c = cfg["cities"][city]
     return {"latitude": lat, "longitude": lon, "start_date": c["start_date"], "end_date": c["end_date"],
-            "hourly": ",".join(cfg["hourly_vars"]), "timezone": c["timezone"], "wind_speed_unit": "ms"}
+            "hourly": ",".join(cfg["hourly_vars"]), "timezone": c["timezone"], "wind_speed_unit": "ms",
+            "models": cfg["model"]}
 
 
 def fetch(cfg: dict, params: dict, retries: int = 6) -> dict:
