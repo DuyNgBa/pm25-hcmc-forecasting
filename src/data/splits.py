@@ -92,6 +92,8 @@ def plot_folds(cfg: dict, out_path, city: str = "hcm") -> None:
               bbox_to_anchor=(0.5, -0.12), ncol=3, frameon=False)
     ax.spines[["top", "right"]].set_visible(False)
     fig.tight_layout()
+    from pathlib import Path
+    Path(out_path).parent.mkdir(parents=True, exist_ok=True)   # tự tạo thư mục nếu chưa có
     fig.savefig(out_path, dpi=150)
     plt.close(fig)
 
