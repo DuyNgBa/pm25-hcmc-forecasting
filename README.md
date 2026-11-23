@@ -70,3 +70,34 @@ pip install -r requirements.txt
 ## Quy ước so sánh công bằng
 
 Cùng phiên bản dữ liệu, cùng cách chia train/val/test theo thời gian, cùng hàm đánh giá (MAE, RMSE, R²), cùng ngân sách tối ưu siêu tham số.
+
+## Môi trường và tái lập kết quả (G0-02)
+
+- **Python 3.10** (máy local dùng 3.10.8). Trên Kaggle/Colab dùng bản Python có sẵn, chỉ cần `pip install -r requirements.txt`.
+- **`seed = 42`** cho mọi thí nghiệm (khai báo trong `configs/data.yaml`, gọi qua `src.utils.seed_everything`). Mô hình học sâu chạy thêm seed 43 và 44 để báo cáo trung bình ± độ lệch chuẩn.
+- Mọi mốc chia train/val/test và đường dẫn dữ liệu nằm trong một file duy nhất: `configs/data.yaml`.
+
+## Quy ước dữ liệu (G0-03)
+
+| Quy ước | Nội dung |
+|---|---|
+| Định dạng file | Parquet (`data/interim/`, `data/processed/`); dữ liệu gốc trong `data/raw/` giữ nguyên |
+| Khoá | (`city`, `station_id`, `time`), không trùng khoá |
+| `city` | `hcm` hoặc `beijing` |
+| `station_id` | TP.HCM: `hcm_01` … `hcm_06`. Bắc Kinh: tên trạm gốc của bộ UCI (`Aotizhongxin`, `Changping`, …) |
+| `time` | Giờ địa phương, không kèm múi giờ, tròn giờ. TP.HCM UTC+7, Bắc Kinh UTC+8 |
+| Giá trị thiếu | `NaN`; giá trị lỗi cảm biến chuyển thành `NaN` |
+| Nội suy | Chỉ nội suy khoảng trống ≤ 3 giờ, đánh dấu bằng cột `is_imputed` |
+| Nhãn đánh giá | Chỉ dùng giá trị đo thật: `is_imputed == 0` và `pm25` không NaN |
+| PM2.5 | µg/m³; không cắt outlier (cả hai thành phố) |
+| Khí tượng | Open-Meteo, `models=era5_seamless`, cùng nguồn cho cả hai thành phố; gió m/s, mưa mm, nhiệt độ °C, áp suất hPa |
+| Tên cột | snake_case, theo lược đồ chung trong `src/data/schema.py` |
+| Môi trường | Python 3.10, `seed = 42`, thư viện trong `requirements.txt` |
+
+Muốn thay đổi quy ước: tạo Pull Request riêng, cả 3 người đồng ý, ghi vào bảng lịch sử thay đổi bên dưới.
+
+### Lịch sử thay đổi quy ước
+
+| Ngày | Thay đổi | Người đề xuất |
+|---|---|---|
+| 23/11/2026 | Ghi lại quy ước đang dùng trong code (mục này) | Bo bo |
