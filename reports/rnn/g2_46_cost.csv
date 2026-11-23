@@ -1,0 +1,3 @@
+model,L,params,n_seeds,train_sec_TB,epoch_tot_nhat_TB,thiet_bi,giay_moi_epoch,hidden/layers/dropout/lr/batch
+GRU,24,67032,3,129.53,3.0,cpu,11.78,64/3/0.32/0.00099/256
+LSTM,48,341528,3,276.6,4.67,cpu,21.84,128/3/0.392/0.000801/512

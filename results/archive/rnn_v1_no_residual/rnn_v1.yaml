@@ -1,0 +1,61 @@
+# =====================================================================
+# Cấu hình LSTM / GRU (TV2 – Minh Trí, GĐ2)
+#   defaults : siêu tham số mặc định (trước khi tối ưu)
+#   best     : bộ tốt nhất cho từng cell, do `python -m src.models.hpo_rnn` ghi (G2-33).
+#              Mọi thí nghiệm (rq1, rq2, rq3, ...) tự lấy best nếu có, nếu không dùng defaults.
+# =====================================================================
+defaults:
+  L: 48              # số giờ lịch sử (24 / 48 / 72)
+  hidden: 64
+  layers: 2
+  dropout: 0.1
+  lr: 0.001
+  batch_size: 256
+
+best:
+  lstm:
+    L: 24
+    hidden: 128
+    layers: 1
+    dropout: 0.041
+    lr: 0.00172
+    batch_size: 512
+    val_MAE: 8.0354
+    n_trials: 30
+
+seeds: [42, 43, 44]          # G2-32: 3 seed, báo cáo trung bình ± độ lệch chuẩn
+
+train:                       # huấn luyện trên TP.HCM (S0, fine-tune S2, S3)
+  max_epochs: 60
+  patience: 8
+  lr_patience: 3
+  weight_decay: 1.0e-5
+  grad_clip: 1.0
+  tf_ratio: 0.5              # teacher forcing ban đầu cho Seq2Seq (giảm dần về 0)
+
+pretrain:                    # tiền huấn luyện trên Bắc Kinh (S1, S2): dữ liệu gấp ~15 lần nên ít epoch hơn
+  max_epochs: 15
+  patience: 3
+  lr_patience: 2
+  weight_decay: 1.0e-5
+  grad_clip: 1.0
+  tf_ratio: 0.5
+
+finetune:
+  lr_mult: 0.3               # S2: learning rate fine-tune = lr × 0.3 (tránh phá kiến thức pretrain)
+
+s3:                          # train chung 2 thành phố có kênh is_hcm
+  hcm_share: 0.5             # mỗi epoch: 50% mẫu TP.HCM, 50% Bắc Kinh (lấy mẫu lại có trọng số)
+  epoch_factor: 2            # số mẫu mỗi epoch = 2 × số cửa sổ train TP.HCM
+
+hpo:                         # G2-33: ngân sách chung của nhóm = 30 lần thử trên val
+  n_trials: 30
+  max_epochs: 40
+  patience: 6
+  space:
+    L: [24, 48, 72]
+    hidden: [32, 64, 128]
+    layers: [1, 2, 3]
+    dropout: [0.0, 0.4]
+    lr: [0.0003, 0.003]
+    batch_size: [128, 256, 512]

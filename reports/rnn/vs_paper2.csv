@@ -1,0 +1,11 @@
+source,model,ablation,MAE_avg24,RMSE_avg24
+Nhóm (test 03–06/2022),GRU,a,6.234,9.55
+Nhóm (test 03–06/2022),GRU,c,6.391,9.73
+Nhóm (test 03–06/2022),LSTM,a,6.294,9.587
+Nhóm (test 03–06/2022),LSTM,c,6.648,10.087
+Nhóm (test 03–06/2022),Seq2Seq,c,6.649,9.976
+Nhóm (test 03–06/2022),persistence,-,8.123,12.521
+"Bài [2] Table 5 (bộ con 3 tháng 2021, TB theo trạm)",CNN-LSTM,chỉ PM2.5,6.65,8.86
+"Bài [2] Table 5 (bộ con 3 tháng 2021, TB theo trạm)",Prophet,chỉ PM2.5,5.89,8.47
+"Bài [2] Table 5 (bộ con 3 tháng 2021, TB theo trạm)",SGDRegressor,chỉ PM2.5,5.75,7.74
+"Bài [2] Table 5 (bộ con 3 tháng 2021, TB theo trạm)",XGBoost,chỉ PM2.5,6.28,8.73

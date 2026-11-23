@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-11-23T16:00:46",
+  "data_fp": "legacy",
+  "data_version": null,
+  "meteo_model": null,
+  "groups": [
+    "rq1",
+    "rolling",
+    "rq2",
+    "seq2seq",
+    "rq3",
+    "curve",
+    "oracle"
+  ],
+  "n_runs": 60,
+  "n_expected": 60,
+  "n_missing": 0,
+  "n_pred_files": 60,
+  "devices": {
+    "cpu": 60
+  },
+  "truth_checked": true,
+  "ok": true,
+  "raw_fp": null,
+  "hcm_fp": null,
+  "beijing_fp": null,
+  "matches_data_lock": false,
+  "data_lock_diff": [
+    "dữ liệu cũ"
+  ],
+  "n_errors": 0,
+  "n_warnings": 1
+}
