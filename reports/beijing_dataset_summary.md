@@ -67,7 +67,7 @@ Các trạm ngoại thành có PM2.5 thấp hơn rõ rệt so với nội thành
 | Vấn đề | Chi tiết | Cách xử lý (giống hệt HealthyAir) |
 |---|---|---|
 | Thiếu giá trị | PM2.5 thiếu 1,1–2,7% mỗi trạm; khí tượng thiếu < 0,5% | Nội suy tuyến tính khoảng trống **≤ 3 giờ**, đánh dấu `is_imputed = 1`. Khoảng trống dài hơn giữ nguyên NaN. Sau bước này PM2.5 còn thiếu 0,5–1,9% |
-| Giá trị trần 999 | PM2.5 và PM10 có giá trị 999, nhiều khả năng là giới hạn của thiết bị | Cắt trên ở phân vị 99,9 tính trên tập train (564 µg/m³), ảnh hưởng 411 giờ |
+| Giá trị rất cao | PM2.5 lên tới 999 µg/m³ (các đợt ô nhiễm nặng mùa đông) | **Giữ nguyên**, không cắt, giống cách nhóm xử lý PM2.5 TP.HCM: đây là biến cần dự báo, giá trị cao là sự kiện thật. Khi chuẩn hoá, PM2.5 được lấy log nên các giá trị lớn được nén lại |
 | Số nguyên | PM2.5 được ghi dạng số nguyên (4, 8, 55…) | Không cần xử lý |
 | Không có độ ẩm | Bộ này không có độ ẩm tương đối | Dùng độ ẩm của Open-Meteo |
 | Hướng gió dạng chữ | `wd` là chữ, không dùng trực tiếp được | Đổi chữ sang độ, rồi tách thành 2 thành phần gió `wind_u`, `wind_v` |
@@ -83,7 +83,7 @@ Nhìn chung bộ Bắc Kinh **sạch hơn HealthyAir rất nhiều**: thiếu ~2
 | % giờ > 35,4 µg/m³ (mức cần cảnh báo) | 62,7% | 11,3% |
 | Giờ ô nhiễm nhất trong ngày | khoảng 22h (ban đêm) | khoảng 7h (giờ đi làm buổi sáng) |
 | Mùa ô nhiễm | mùa đông (tháng 12, do sưởi ấm) | mùa khô (tháng 1) |
-| Các trạm có lên xuống cùng nhau không | rất giống nhau (tương quan 0,89) | ít giống hơn (0,60), do nguồn ô nhiễm tại chỗ |
+| Các trạm có lên xuống cùng nhau không | rất giống nhau (tương quan 0,89) | ít giống hơn (0,59), do nguồn ô nhiễm tại chỗ |
 
 Vì hai thành phố chênh nhau khoảng 4 lần về mức nồng độ, PM2.5 được **lấy log rồi chuẩn hoá riêng theo từng trạm** trước khi đưa vào mô hình. Nhờ đó mô hình học **hình dạng lên xuống** của chuỗi chứ không học mức tuyệt đối.
 
