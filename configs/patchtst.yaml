@@ -1,0 +1,57 @@
+# Cấu hình PatchTST (TV3 — Bo bo). Siêu tham số mặc định; Optuna (30 trial) sẽ ghi đè
+# bằng file configs/patchtst_best_L{L}.yaml sau khi chạy --hpo.
+model:
+  head: fusion            # fusion | target_only
+  revin: true
+  norm: batch             # batch (như repo gốc) | layer
+  res_attention: true
+  d_model: 64
+  n_heads: 4
+  n_layers: 3
+  d_ff: 128
+  dropout: 0.2
+  attn_dropout: 0.0
+  head_dropout: 0.1
+
+# G2-53: patch length / stride theo L. Giữ P = 6 giờ (1/4 ngày), S = P/2 cho cả 3 L để mỗi "từ"
+# có cùng ý nghĩa thời gian -> so sánh L công bằng; số patch = 8 / 16 / 24.
+patch:
+  24: {patch_len: 6, stride: 3}
+  48: {patch_len: 6, stride: 3}
+  72: {patch_len: 6, stride: 3}
+
+train:
+  batch_size: 256
+  lr: 0.001
+  weight_decay: 0.0001
+  max_epochs: 60
+  patience: 8             # early stopping theo val loss (MSE trên z, chỉ mục tiêu có giá trị)
+  grad_clip: 1.0
+  num_workers: 2
+
+finetune:                 # S2: fine-tune trên TP.HCM sau khi pretrain Bắc Kinh
+  lr_full: 0.0003         # S2_full: lr nhỏ hơn để không "quên" kiến thức Bắc Kinh quá nhanh
+  lr_head: 0.001          # S2_head: chỉ huấn luyện đầu ra
+  max_epochs: 40
+  patience: 6
+
+joint:                    # S3: train chung, cân bằng mẫu
+  hcm_share: 0.5          # tỉ lệ mẫu TP.HCM trong mỗi epoch (lấy mẫu có trọng số)
+  epoch_size: 40000       # số mẫu mỗi epoch
+
+hpo:                      # G2-56: CÙNG ngân sách 30 trial trên val cho cả 3 thành viên
+  n_trials: 30
+  max_epochs: 30
+  patience: 5
+  space:
+    d_model: [32, 64, 128]
+    n_layers: [2, 3, 4]
+    n_heads: [4, 8]
+    d_ff: [64, 128, 256]
+    dropout: [0.0, 0.4]
+    head_dropout: [0.0, 0.3]
+    lr: [0.0001, 0.003]          # log-uniform
+    patch_len: [4, 6, 8, 12]     # stride = patch_len / 2
+    batch_size: [128, 256]
+
+seeds: [42, 43, 44]       # G2-55: 3 seed cho cấu hình chính
