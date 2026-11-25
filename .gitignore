@@ -228,3 +228,7 @@ data/interim/*
 data/processed/*
 !data/processed/.gitkeep
 checkpoints/
+logs/
+# Dự đoán đủ 24 tầm (TV2): nặng ~150 MB, tạo lại được; chỉ số TB 1..24 đã có trong results/rnn_runs.csv
+results/preds/*_h24.parquet
+results/hpo/*.db
