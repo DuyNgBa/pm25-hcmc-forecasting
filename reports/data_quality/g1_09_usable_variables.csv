@@ -1,0 +1,7 @@
+station_id,pm25,tsp,o3,co,no2,so2,temp_sensor,rh_sensor
+hcm_01,biến mục tiêu,dùng được,chỉ thí nghiệm bổ sung,dùng được,chỉ thí nghiệm bổ sung,không dùng làm đặc trưng chính,dùng được,dùng được
+hcm_02,biến mục tiêu,dùng được,dùng được,chỉ thí nghiệm bổ sung,dùng được,không dùng làm đặc trưng chính,dùng được,dùng được
+hcm_03,biến mục tiêu,chỉ thí nghiệm bổ sung,dùng được,dùng được,dùng được,không dùng làm đặc trưng chính,dùng được,dùng được
+hcm_04,biến mục tiêu,dùng được,dùng được,dùng được,dùng được,không dùng làm đặc trưng chính,chỉ thí nghiệm bổ sung,chỉ thí nghiệm bổ sung
+hcm_05,biến mục tiêu,dùng được,chỉ thí nghiệm bổ sung,dùng được,chỉ thí nghiệm bổ sung,không dùng làm đặc trưng chính,chỉ thí nghiệm bổ sung,chỉ thí nghiệm bổ sung
+hcm_06,biến mục tiêu,dùng được,dùng được,dùng được,dùng được,không dùng làm đặc trưng chính,dùng được,dùng được

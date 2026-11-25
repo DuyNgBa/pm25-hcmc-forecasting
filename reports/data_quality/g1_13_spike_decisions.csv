@@ -1,0 +1,34 @@
+id,station_id,time,truoc,tai_diem,sau,chenh_lech,so_tram_khac_cung_bien_dong,goi_y,ly_do,quyet_dinh
+1,hcm_01,2021-05-21 19:00:00,4.7,301.4,27.8,296.7,0,loại,"nhảy một điểm rồi quay lại ngay, các trạm khác không đổi → nghi lỗi đo",loại
+2,hcm_01,2021-05-21 20:00:00,301.4,27.8,22.6,-273.6,0,theo #1,"nhịp quay về của điểm #1, không xử lý riêng",theo #1
+3,hcm_03,2021-06-25 18:00:00,151.2,26.6,22.4,-124.6,0,giữ,mức cao duy trì sau khi nhảy → có thể là sự kiện cục bộ,giữ
+4,hcm_03,2022-01-05 05:00:00,207.8,81.7,29.8,-126.1,0,giữ,mức cao duy trì sau khi nhảy → có thể là sự kiện cục bộ,giữ
+5,hcm_03,2022-01-06 03:00:00,51.1,155.5,113.3,104.5,0,giữ,mức cao duy trì sau khi nhảy → có thể là sự kiện cục bộ,giữ
+6,hcm_03,2022-01-18 04:00:00,47.5,173.8,161.1,126.3,0,giữ,mức cao duy trì sau khi nhảy → có thể là sự kiện cục bộ,giữ
+7,hcm_04,2021-06-30 16:00:00,17.1,156.0,33.1,138.9,0,loại,"nhảy một điểm rồi quay lại ngay, các trạm khác không đổi → nghi lỗi đo",loại
+8,hcm_04,2021-06-30 17:00:00,156.0,33.1,28.2,-122.9,0,theo #7,"nhịp quay về của điểm #7, không xử lý riêng",theo #7
+9,hcm_04,2021-08-08 06:00:00,56.2,274.5,20.3,218.2,0,loại,"nhảy một điểm rồi quay lại ngay, các trạm khác không đổi → nghi lỗi đo",loại
+10,hcm_04,2021-08-08 07:00:00,274.5,20.3,15.0,-254.1,0,theo #9,"nhịp quay về của điểm #9, không xử lý riêng",theo #9
+11,hcm_04,2021-10-14 08:00:00,21.0,197.0,324.8,176.0,0,giữ,mức cao duy trì sau khi nhảy → có thể là sự kiện cục bộ,giữ
+12,hcm_04,2021-10-14 09:00:00,197.0,324.8,275.2,127.8,0,giữ,mức cao duy trì sau khi nhảy → có thể là sự kiện cục bộ,giữ
+13,hcm_04,2021-10-14 14:00:00,208.2,403.7,331.5,195.5,0,giữ,mức cao duy trì sau khi nhảy → có thể là sự kiện cục bộ,giữ
+14,hcm_04,2021-10-14 16:00:00,331.5,199.3,113.5,-132.1,0,giữ,mức cao duy trì sau khi nhảy → có thể là sự kiện cục bộ,giữ
+15,hcm_04,2021-10-15 10:00:00,25.7,129.6,25.6,104.0,0,loại,"nhảy một điểm rồi quay lại ngay, các trạm khác không đổi → nghi lỗi đo",loại
+16,hcm_04,2021-10-15 11:00:00,129.6,25.6,22.8,-104.1,0,theo #15,"nhịp quay về của điểm #15, không xử lý riêng",theo #15
+17,hcm_04,2021-10-16 15:00:00,53.0,369.5,27.5,316.5,0,loại,"nhảy một điểm rồi quay lại ngay, các trạm khác không đổi → nghi lỗi đo",loại
+18,hcm_04,2021-10-16 16:00:00,369.5,27.5,30.7,-342.0,0,theo #17,"nhịp quay về của điểm #17, không xử lý riêng",theo #17
+19,hcm_04,2021-11-01 10:00:00,34.0,175.8,43.0,141.8,0,loại,"nhảy một điểm rồi quay lại ngay, các trạm khác không đổi → nghi lỗi đo",loại
+20,hcm_04,2021-11-01 11:00:00,175.8,43.0,23.1,-132.7,0,theo #19,"nhịp quay về của điểm #19, không xử lý riêng",theo #19
+21,hcm_04,2021-11-05 09:00:00,168.8,65.5,47.4,-103.3,0,giữ,mức cao duy trì sau khi nhảy → có thể là sự kiện cục bộ,giữ
+22,hcm_04,2022-01-04 16:00:00,186.2,68.3,54.6,-117.9,0,giữ,mức cao duy trì sau khi nhảy → có thể là sự kiện cục bộ,giữ
+23,hcm_05,2022-02-14 15:00:00,7.9,226.7,8.8,218.8,0,loại,"nhảy một điểm rồi quay lại ngay, các trạm khác không đổi → nghi lỗi đo",loại
+24,hcm_05,2022-02-14 16:00:00,226.7,8.8,11.3,-217.8,0,theo #23,"nhịp quay về của điểm #23, không xử lý riêng",theo #23
+25,hcm_05,2022-03-28 21:00:00,8.3,290.4,,282.1,0,cần xem,"giờ sau bị thiếu dữ liệu, không đủ căn cứ tự động",loại
+26,hcm_06,2021-05-24 04:00:00,6.6,310.4,14.7,303.8,0,loại,"nhảy một điểm rồi quay lại ngay, các trạm khác không đổi → nghi lỗi đo",loại
+27,hcm_06,2021-05-24 05:00:00,310.4,14.7,11.3,-295.7,0,theo #26,"nhịp quay về của điểm #26, không xử lý riêng",theo #26
+28,hcm_06,2021-10-23 23:00:00,6.3,265.6,25.3,259.4,0,loại,"nhảy một điểm rồi quay lại ngay, các trạm khác không đổi → nghi lỗi đo",loại
+29,hcm_06,2021-10-24 00:00:00,265.6,25.3,33.6,-240.3,0,theo #28,"nhịp quay về của điểm #28, không xử lý riêng",theo #28
+30,hcm_06,2022-05-02 10:00:00,7.7,229.9,11.2,222.2,0,loại,"nhảy một điểm rồi quay lại ngay, các trạm khác không đổi → nghi lỗi đo",loại
+31,hcm_06,2022-05-02 11:00:00,229.9,11.2,11.0,-218.6,0,theo #30,"nhịp quay về của điểm #30, không xử lý riêng",theo #30
+32,hcm_06,2022-06-02 20:00:00,20.2,266.2,23.4,246.0,0,loại,"nhảy một điểm rồi quay lại ngay, các trạm khác không đổi → nghi lỗi đo",loại
+33,hcm_06,2022-06-02 21:00:00,266.2,23.4,20.2,-242.8,0,theo #32,"nhịp quay về của điểm #32, không xử lý riêng",theo #32
