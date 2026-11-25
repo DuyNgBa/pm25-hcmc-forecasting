@@ -1,0 +1,17 @@
+{
+  "raw_path": "data/raw/Air_Quality_HCMC.csv",
+  "out_path": "data/interim/healthyair_clean.parquet",
+  "report_dir": "reports/data_quality",
+  "dictionary_path": "data/data_dictionary.md",
+  "thresholds_path": "configs/outlier_thresholds.json",
+  "train_end": "2021-12-31 23:00",
+  "frozen_min_hours": 24,
+  "long_gap_hours": 24,
+  "usable_max_missing": 0.30,
+  "no2_saturation": {"station_id": "hcm_05", "low": 270, "high": 283},
+  "spike_threshold": 100,
+  "outlier_quantile": 0.999,
+  "interp_max_hours": 3,
+  "lockdown_start": "2021-07-09 00:00",
+  "lockdown_end": "2021-10-01 00:00"
+}

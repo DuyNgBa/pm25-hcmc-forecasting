@@ -219,6 +219,8 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
+
+*.parquet
 # ---- Dữ liệu trung gian / đã xử lý: không commit (TV3 thêm) ----
 # data/raw ĐƯỢC commit theo quy ước nhóm
 data/interim/*
