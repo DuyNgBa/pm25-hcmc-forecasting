@@ -221,3 +221,10 @@ __marimo__/
 
 
 *.parquet
+# ---- Dữ liệu trung gian / đã xử lý: không commit (TV3 thêm) ----
+# data/raw ĐƯỢC commit theo quy ước nhóm
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+checkpoints/

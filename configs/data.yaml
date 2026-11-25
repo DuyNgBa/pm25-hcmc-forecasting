@@ -1,0 +1,117 @@
+# =====================================================================
+# File config DÙNG CHUNG cho cả nhóm (G1-48, G1-49, G1-50, G1-51, G1-53,
+# G1-54, G1-56, G1-58). Người phụ trách: Bo bo (TV3).
+# Quy tắc: KHÔNG sửa file này sau khi tag data-v1.0. Muốn đổi -> bump
+# data_version, báo cả nhóm, mọi người chạy lại.
+# =====================================================================
+data_version: "v0.9-dev"     # đổi thành "v1.0" khi chốt dữ liệu (G1-66)
+seed: 42                     # seed chung (G0-02)
+
+paths:
+  raw_beijing: data/raw/beijing            # 12 file PRSA_Data_*.csv
+  raw_healthyair: data/raw/Air_Quality_HCMC.csv   # file gốc Duy đã đưa lên repo
+  raw_openmeteo: data/raw/openmeteo         # TV2 (Minh Trí) ghi vào đây
+  beijing_raw_parquet: data/interim/beijing_raw.parquet
+  beijing_clean_parquet: data/interim/beijing_clean.parquet
+  healthyair_clean: data/interim/healthyair_clean.parquet   # TV1 (Duy Ngô) xuất
+  meteo_hcm: data/interim/meteo_hcm.parquet                  # TV2 xuất
+  meteo_beijing: data/interim/meteo_beijing.parquet          # TV2 xuất
+  hcm_schema: data/processed/hcm_schema.parquet
+  beijing_schema: data/processed/beijing_schema.parquet
+  scaler_params: data/processed/scaler_params.json
+  results_dir: results        # quy ước nhóm: results/<tên-phương-pháp>.csv, cùng mẫu cột
+  preds_dir: results/preds
+
+# ---------------------------------------------------------------------
+# Thông tin trạm
+# ---------------------------------------------------------------------
+stations:
+  hcm:
+    # station_id = "hcm_" + Station_No 2 chữ số (quy ước của TV1 trong clean_healthyair.py). area_type dùng cho phân tích theo loại khu vực.
+    # Toạ độ lấy từ Bảng 1 bài Data in Brief [1]. LƯU Ý: bảng gốc ghi nhầm
+    # tiêu đề cột (cột "longitude" thực ra là vĩ độ ~10.8, "latitude" là kinh độ ~106.7).
+    hcm_01: {area_type: urban_background, lat: 10.86994333, lon: 106.7960143}
+    hcm_02: {area_type: traffic,          lat: 10.74097081, lon: 106.6171323}
+    hcm_03: {area_type: industrial,       lat: 10.81621227, lon: 106.6204143}
+    hcm_04: {area_type: residential,      lat: 10.81584553, lon: 106.7174282}
+    hcm_05: {area_type: traffic,          lat: 10.77636612, lon: 106.6878094}
+    hcm_06: {area_type: traffic_residential, lat: 10.78047163, lon: 106.6594579}
+  beijing:
+    # Toạ độ do TV2 bổ sung (G1-27). area_type chỉ để tham khảo.
+    ids: [Aotizhongxin, Changping, Dingling, Dongsi, Guanyuan, Gucheng,
+          Huairou, Nongzhanguan, Shunyi, Tiantan, Wanliu, Wanshouxigong]
+
+# ---------------------------------------------------------------------
+# G1-48: Chia dữ liệu TP.HCM theo thời gian (KHÔNG xáo trộn).
+# Các mốc là giờ địa phương, bao gồm cả 2 đầu (inclusive).
+# Quy tắc gán cửa sổ: một cửa sổ thuộc split X nếu TẤT CẢ thời điểm mục tiêu
+# (t+1..t+H) nằm trong X. Với train: cả phần input cũng phải nằm trong train.
+# Với val/test: input được phép lấy lịch sử trước đó (đúng như khi dự báo thật).
+# ---------------------------------------------------------------------
+splits:
+  hcm:
+    train: ["2021-02-23 00:00", "2021-12-31 23:00"]
+    val:   ["2022-01-01 00:00", "2022-02-28 23:00"]
+    test:  ["2022-03-01 00:00", "2022-06-21 23:00"]
+  # G1-49: Bắc Kinh chỉ dùng để pretrain -> chỉ có train/val, KHÔNG có test.
+  # 3 năm train + 1 năm val (đủ 1 chu kỳ mùa để early stopping không thiên mùa).
+  beijing:
+    train: ["2013-03-01 00:00", "2016-02-29 23:00"]
+    val:   ["2016-03-01 00:00", "2017-02-28 23:00"]
+
+# ---------------------------------------------------------------------
+# G1-50: Rolling-origin (expanding window) cho TP.HCM.
+# Mỗi fold: train = từ đầu chuỗi đến train_end; val = 1 tháng ngay sau;
+# test = 2 tháng tiếp theo. 4 fold phủ liên tục 11/2021 -> 06/2022, gồm cả
+# đỉnh mùa khô (11-01) mà tập test chính (03-06/2022) không có.
+# Mọi bước fit (scaler, ngưỡng outlier, trung bình theo giờ...) phải FIT LẠI
+# trên train của từng fold.
+# ---------------------------------------------------------------------
+rolling_origin:
+  hcm:
+    - {fold: 1, train: ["2021-02-23 00:00", "2021-09-30 23:00"], val: ["2021-10-01 00:00", "2021-10-31 23:00"], test: ["2021-11-01 00:00", "2021-12-31 23:00"]}
+    - {fold: 2, train: ["2021-02-23 00:00", "2021-11-30 23:00"], val: ["2021-12-01 00:00", "2021-12-31 23:00"], test: ["2022-01-01 00:00", "2022-02-28 23:00"]}
+    - {fold: 3, train: ["2021-02-23 00:00", "2022-01-31 23:00"], val: ["2022-02-01 00:00", "2022-02-28 23:00"], test: ["2022-03-01 00:00", "2022-04-30 23:00"]}
+    - {fold: 4, train: ["2021-02-23 00:00", "2022-03-31 23:00"], val: ["2022-04-01 00:00", "2022-04-30 23:00"], test: ["2022-05-01 00:00", "2022-06-21 23:00"]}
+
+# ---------------------------------------------------------------------
+# Làm sạch tối thiểu dùng chung (G1-46): phải GIỐNG quy tắc của TV1.
+# ---------------------------------------------------------------------
+cleaning:
+  max_interp_gap_hours: 3     # nội suy tuyến tính khoảng trống <= 3 giờ, trong từng trạm
+  outlier_quantile: 0.999     # PM2.5 KHÔNG cắt (giống TV1); chỉ ghi ngưỡng q99,9 train để tham khảo
+
+# ---------------------------------------------------------------------
+# G1-51, G1-53: Chuẩn hoá
+# ---------------------------------------------------------------------
+scaling:
+  pm25: {transform: log1p, per: station}      # z = (log(1+x) - mu_s) / sigma_s
+  meteo:
+    per: city                                  # tham số tính riêng cho mỗi thành phố, trên train
+    zscore: [temp, rh, dew, pressure, wind_speed, temp_ha, rh_ha]   # temp_ha/rh_ha: khí tượng gốc HealthyAir (ablation b)
+    scale_only: [wind_u, wind_v]               # chia sigma, KHÔNG trừ mean (giữ dấu = hướng gió)
+    log1p_scale_only: [precip, precip_6h, precip_24h]   # log1p rồi chia sigma (0 mm vẫn = 0)
+  # hour_sin/cos, dow_sin/cos đã nằm trong [-1, 1] -> không chuẩn hoá
+
+# ---------------------------------------------------------------------
+# G1-54: Cửa sổ trượt
+# ---------------------------------------------------------------------
+windows:
+  input_lengths: [24, 48, 72]   # L
+  horizon_max: 24               # mô hình DL dự báo cả 1..24
+  eval_horizons: [1, 6, 24]     # tầm báo cáo chính
+  input_nan_policy: drop_target # chỉ bỏ cửa sổ khi PM2.5 input có NaN; NaN đặc trưng khác -> 0
+                                # (+ kênh _isna cho temp_ha/rh_ha). Xem src/data/windows.py
+  eval_reference_L: 72          # tập gốc t đánh giá CHUNG = gốc hợp lệ với L=72 -> mọi L/ablation cùng n
+  min_valid_targets: 1          # giữ cửa sổ nếu có >= 1 mục tiêu là giá trị đo thật
+
+# G1-56: lấy mẫu con dữ liệu train TP.HCM
+train_subsample:
+  fracs: [1.0, 0.5, 0.25]
+  mode: last        # last: đoạn liên tục CUỐI của train (sát val, kịch bản "trạm mới lắp")
+                    # random: đoạn liên tục bắt đầu ngẫu nhiên, cố định bằng seed
+
+# G1-57/58: đánh giá
+evaluation:
+  high_threshold: 35.4          # µg/m³, ranh giới Moderate/USG của US EPA
+  aqi_scale: us_epa_2024        # thang chính; vn_aqi_2019 là thang bổ sung

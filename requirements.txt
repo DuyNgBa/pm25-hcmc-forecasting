@@ -3,3 +3,13 @@ numpy
 pyarrow 
 tabulate
 matplotlib
+pandas
+numpy
+pyarrow
+pyyaml
+requests
+matplotlib
+tabulate
+scipy
+scikit-learn
+pytest
