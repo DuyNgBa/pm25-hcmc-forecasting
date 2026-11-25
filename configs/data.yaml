@@ -4,7 +4,7 @@
 # Quy tắc: KHÔNG sửa file này sau khi tag data-v1.0. Muốn đổi -> bump
 # data_version, báo cả nhóm, mọi người chạy lại.
 # =====================================================================
-data_version: "v0.9-dev"     # đổi thành "v1.0" khi chốt dữ liệu (G1-66)
+data_version: "v1.0"     # đổi thành "v1.0" khi chốt dữ liệu (G1-66)
 seed: 42                     # seed chung (G0-02)
 
 paths:
